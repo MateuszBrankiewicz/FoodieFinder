@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=FoodieFinder'
+      - 'POSTGRES_PASSWORD=Kondrat123'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432'

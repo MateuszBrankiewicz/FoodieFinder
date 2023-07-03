@@ -1,0 +1,54 @@
+div {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-direction: column;
+  position: relative;
+}
+.input-container {
+  position: relative;
+  width: 100%;
+}
+input {
+  border-radius: 5rem;
+  border: none;
+  background-color: #f1f1f1;
+  padding: 1.2rem;
+  font-weight: 500;
+  outline: none;
+}
+span {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 1.6rem;
+  text-align: center;
+  aspect-ratio: 1/1;
+  background-color: #878787;
+  right: 2rem;
+  cursor: pointer;
+}
+span:hover {
+  background-color: #3b3b3b;
+}
+ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #878787;
+  padding: 0.75rem;
+  list-style: none;
+  max-height: 10rem;
+  overflow-y: auto;
+  border-radius: 1rem;
+}
+ul li {
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+ul li:hover {
+  color: #3b3b3b;
+}

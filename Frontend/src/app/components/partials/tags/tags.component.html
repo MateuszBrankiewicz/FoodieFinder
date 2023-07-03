@@ -1,0 +1,9 @@
+<div>
+  <button
+    *ngFor="let foodType of foodTypes"
+    [class.selected]="selectedFoodTypes.includes(foodType)"
+    (click)="onSelectFoodType(foodType)"
+  >
+    {{ foodType }}
+  </button>
+</div>

@@ -1,0 +1,54 @@
+<app-search
+  (citySelected)="onCitySelected($event)"
+  [selectedCity]="selectedCity"
+  [searchTerm]="searchTerm"
+></app-search>
+<app-tags (foodTypesSelected)="onFoodTypesSelected($event)"></app-tags>
+
+<ul class="places-list" *ngIf="selectedCity || selectedFoodTypes.length > 0">
+  <div>
+    <label for="sortingOptions">Sort by:</label>
+    <select
+      id="sortingOptions"
+      [(ngModel)]="sortingOption"
+      (ngModelChange)="onSortingOptionChange()"
+    >
+      <option value="bestRating">Best Rating</option>
+      <option value="worstRating">Worst Rating</option>
+    </select>
+  </div>
+
+  <li *ngFor="let place of placesList">
+    <img [src]="place.imageUrl" [alt]="place.name" />
+    <div class="content">
+      <h2>{{ place.name }}</h2>
+      <div class="rating">
+        <p>{{ place.reviews }}⭐ na {{ place.review_num }} opinii.</p>
+      </div>
+      <div class="address">
+        <p>📌 {{ place.city }}, {{ place.address }}</p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div
+  *ngIf="!selectedCity && selectedFoodTypes.length === 0"
+  class="popular-cities"
+>
+  <h2>Popularne miasta:</h2>
+  <ul>
+    <li
+      *ngFor="let city of popularCities"
+      (click)="onSelectPopularCity(city.name)"
+    >
+      <div class="content">
+        <img [src]="city.imageUrl" [alt]="city.desc" />
+        <h3>{{ city.name }}</h3>
+        <p>{{ city.desc }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<app-footer></app-footer>

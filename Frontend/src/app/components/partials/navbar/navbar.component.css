@@ -1,0 +1,22 @@
+header {
+  position: relative;
+  background: #efefef;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  width: 150px;
+  display: block;
+  padding: 1rem;
+}
+a img {
+  max-width: 100%;
+}

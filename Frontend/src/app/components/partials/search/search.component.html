@@ -1,0 +1,18 @@
+<div>
+  <input
+    type="text"
+    placeholder="Znajdź swoje miasto"
+    [(ngModel)]="searchTerm"
+    (input)="showMore()"
+    (blur)="hideSuggestions()"
+  />
+  <span (click)="clearInput()" *ngIf="searchTerm">X</span>
+  <ul *ngIf="suggestedCities.length > 0">
+    <li
+      *ngFor="let suggestion of suggestedCities"
+      (click)="onSelectCity(suggestion)"
+    >
+      {{ suggestion }}
+    </li>
+  </ul>
+</div>

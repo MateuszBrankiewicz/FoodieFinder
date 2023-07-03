@@ -1,0 +1,25 @@
+div {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+div button {
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  aspect-ratio: 1/1;
+  width: 6.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: none;
+}
+button:hover {
+  background-color: darkgrey;
+}
+button.selected {
+  background-color: darkkhaki;
+}

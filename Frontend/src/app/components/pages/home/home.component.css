@@ -1,0 +1,47 @@
+.places-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.places-list li {
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: darkgrey;
+}
+.places-list li img {
+  max-width: 50%;
+  border-radius: 0.5rem;
+}
+.places-list li .content {
+  display: flex;
+  padding: 0 1rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.popular-cities ul {
+  padding: 0;
+}
+
+.popular-cities {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.popular-cities li {
+  width: 100%;
+  cursor: pointer;
+  background-color: lightgrey;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.popular-cities li .content {
+  position: relative;
+}
+.popular-cities li .content img {
+  max-width: 100%;
+}

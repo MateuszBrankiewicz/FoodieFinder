@@ -5,6 +5,7 @@
 ></app-search>
 <app-tags (foodTypesSelected)="onFoodTypesSelected($event)"></app-tags>
 
+<!-- Places list -->
 <ul class="places-list" *ngIf="selectedCity || selectedFoodTypes.length > 0">
   <div>
     <label for="sortingOptions">Sort by:</label>
@@ -32,18 +33,22 @@
   </li>
 </ul>
 
+<!-- Default home view -->
+
 <div
   *ngIf="!selectedCity && selectedFoodTypes.length === 0"
   class="popular-cities"
 >
-  <h2>Popularne miasta:</h2>
+  <h2>Najpopularniejsze miasta w Polsce</h2>
   <ul>
     <li
       *ngFor="let city of popularCities"
       (click)="onSelectPopularCity(city.name)"
     >
-      <div class="content">
-        <img [src]="city.imageUrl" [alt]="city.desc" />
+      <div
+        class="content background-image"
+        [style.background-image]="'url(' + city.imageUrl + ')'"
+      >
         <h3>{{ city.name }}</h3>
         <p>{{ city.desc }}</p>
       </div>

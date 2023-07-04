@@ -1,8 +1,7 @@
 header {
   position: relative;
-  background: #efefef;
-  padding: 0;
-  border-bottom: 1px solid black;
+  background: var(--lightNeutral);
+  padding: 1rem;
 }
 
 .container {
@@ -12,11 +11,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-a {
-  width: 150px;
-  display: block;
-  padding: 1rem;
-}
 a img {
+  width: 20rem;
   max-width: 100%;
 }

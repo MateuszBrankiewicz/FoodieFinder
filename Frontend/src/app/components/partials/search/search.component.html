@@ -1,4 +1,11 @@
-<div>
+<div class="search-container">
+  <img
+    class="loupe-icon"
+    src="../../../../assets/icons/loupe.png"
+    alt="search"
+    draggable="false"
+    [ngClass]="{ focused: isInputFocused }"
+  />
   <input
     type="text"
     placeholder="Znajdź swoje miasto"
@@ -6,12 +13,20 @@
     (input)="showMore()"
     (blur)="hideSuggestions()"
   />
-  <span (click)="clearInput()" *ngIf="searchTerm">X</span>
+  <img
+    class="close-icon"
+    (click)="clearInput()"
+    *ngIf="searchTerm"
+    src="../../../../assets/icons/close.png"
+    alt="close"
+    draggable="false"
+  />
   <ul *ngIf="suggestedCities.length > 0">
     <li
       *ngFor="let suggestion of suggestedCities"
       (click)="onSelectCity(suggestion)"
     >
+      <img src="../../../../assets/icons/pin.png" alt="pin" draggable="false" />
       {{ suggestion }}
     </li>
   </ul>

@@ -1,25 +1,65 @@
-div {
-  padding: 0;
+.tags-container {
+  padding: 0 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.25rem;
 }
-div button {
-  cursor: pointer;
+.tags-container .tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tags-container .tag button {
   border-radius: 50%;
-  font-size: 1.2rem;
+  width: 14vw;
+  max-width: 8rem;
   aspect-ratio: 1/1;
-  width: 6.5rem;
+  cursor: pointer;
+  box-shadow: 3px 1px 0px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+  border: 2px solid var(--dark);
+  transition: all 0.2s ease-in-out;
+}
+.tags-container .tag button img {
+  max-width: 100%;
+  padding: 1rem;
+  filter: brightness(0) saturate(100%) invert(16%) sepia(88%) saturate(0%)
+    hue-rotate(220deg) brightness(91%) contrast(81%);
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+.tags-container .tag p {
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  border: none;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
-button:hover {
-  background-color: darkgrey;
+
+.tags-container .tag:hover button {
+  border-color: var(--neutral);
 }
-button.selected {
-  background-color: darkkhaki;
+
+.tags-container .tag:hover button img {
+  filter: brightness(0) saturate(100%) invert(78%) sepia(16%) saturate(396%)
+    hue-rotate(127deg) brightness(84%) contrast(82%);
+  opacity: 1;
+  scale: 1.1;
+}
+
+/* Selected styling */
+.tags-container .tag button.selected {
+  background-color: var(--neutral);
+  border-color: var(--neutral);
+}
+
+.tags-container .tag button.selected img {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(27%) saturate(64%)
+    hue-rotate(335deg) brightness(99%) contrast(89%);
+  opacity: 1;
+}
+
+.tags-container .tag:hover button.selected {
+  background-color: #7fa09e;
+  border-color: #7fa09e;
 }

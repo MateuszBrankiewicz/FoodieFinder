@@ -22,26 +22,113 @@
   flex-wrap: wrap;
 }
 
-.popular-cities ul {
-  padding: 0;
-}
-
+/* Default home view */
 .popular-cities {
+  margin-top: 2rem;
   width: 100%;
-  padding: 1.5rem 0;
+  background-color: var(--lightNeutral);
+  border-radius: 6rem 6rem 0 0;
+  padding: 0;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
 }
-.popular-cities li {
-  width: 100%;
-  cursor: pointer;
-  background-color: lightgrey;
-  padding: 1rem;
-  margin-top: 1rem;
+.popular-cities h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2rem 10rem;
 }
-.popular-cities li .content {
+.popular-cities ul {
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+.popular-cities li {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
   position: relative;
 }
-.popular-cities li .content img {
-  max-width: 100%;
+
+.popular-cities li:nth-child(even)::after {
+  content: "";
+  background-color: var(--dark);
+  position: absolute;
+  z-index: -1;
+  width: 10rem;
+  height: 100%;
+  top: 0;
+  left: 0.5rem;
+  border-radius: 2.3rem;
+}
+
+.popular-cities li:nth-child(odd)::after {
+  content: "";
+  background-color: var(--dark);
+  position: absolute;
+  z-index: -1;
+  width: 10rem;
+  height: 100%;
+  top: 0;
+  right: 0.5rem;
+  border-radius: 2.3rem;
+}
+
+.popular-cities li:not(:first-child) {
+  margin-top: 3.5rem;
+}
+
+.popular-cities li .content {
+  border-radius: 2rem;
+  width: 100%;
+}
+.popular-cities li .background-image {
+  aspect-ratio: 16/9;
+  height: 20rem;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, background-size 0.3s;
+}
+
+.popular-cities li:hover .background-image {
+  background-size: 120%;
+}
+
+.background-image::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 95%);
+  z-index: 1;
+  border-radius: 2rem;
+}
+
+.background-image h3 {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  z-index: 3;
+  font-size: 3rem;
+  color: var(--neutral);
+  transform: translate(-50%);
+}
+.background-image p::before,
+.background-image p::after {
+  content: '"';
+}
+.background-image p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  color: var(--light);
+  z-index: 3;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transform: translate(-50%);
 }

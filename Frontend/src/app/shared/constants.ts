@@ -1,3 +1,5 @@
+import { Tag } from './models/Tag';
+
 export const CITIES = [
   'Warszawa',
   'Kraków',
@@ -59,4 +61,10 @@ export const POPULAR_CITIES = [
   },
 ];
 
-export const TAGS = ['Burger', 'Kebab', 'Pizza', 'Bar mleczny', 'Sushi'];
+export const TAGS: Tag[] = [
+  { title: 'Burger', imageUrl: '../../../../assets/icons/burger.png' },
+  { title: 'Pizza', imageUrl: '../../../../assets/icons/pizza-slice.png' },
+  { title: 'Kebab', imageUrl: '../../../../assets/icons/burrito.png' },
+  { title: 'Bar mleczny', imageUrl: '../../../../assets/icons/restaurant.png' },
+  { title: 'Sushi', imageUrl: '../../../../assets/icons/sushi.png' },
+];

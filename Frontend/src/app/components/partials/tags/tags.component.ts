@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TAGS } from 'src/app/shared/constants';
+import { Tag } from 'src/app/shared/models/Tag';
 
 @Component({
   selector: 'app-tags',
@@ -7,7 +8,7 @@ import { TAGS } from 'src/app/shared/constants';
   styleUrls: ['./tags.component.css'],
 })
 export class TagsComponent {
-  foodTypes: string[] = TAGS;
+  foodTypes: Tag[] = TAGS;
   selectedFoodTypes: string[] = [];
 
   @Output() foodTypesSelected: EventEmitter<string[]> = new EventEmitter<

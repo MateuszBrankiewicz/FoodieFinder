@@ -1,9 +1,12 @@
-<div>
-  <button
+<div class="tags-container">
+  <div
+    class="tag"
     *ngFor="let foodType of foodTypes"
-    [class.selected]="selectedFoodTypes.includes(foodType)"
-    (click)="onSelectFoodType(foodType)"
+    (click)="onSelectFoodType(foodType.title)"
   >
-    {{ foodType }}
-  </button>
+    <button [class.selected]="selectedFoodTypes.includes(foodType.title)">
+      <img [src]="foodType.imageUrl" [alt]="foodType.title" />
+    </button>
+    <p>{{ foodType.title }}</p>
+  </div>
 </div>

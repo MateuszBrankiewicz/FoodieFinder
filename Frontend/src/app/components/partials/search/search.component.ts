@@ -9,6 +9,7 @@ import { CITIES } from 'src/app/shared/constants';
 export class SearchComponent {
   cities: string[] = CITIES;
   suggestedCities: string[] = [];
+  isInputFocused = false;
 
   @Input() selectedCity: string = '';
   @Input() searchTerm: string = '';
@@ -25,6 +26,11 @@ export class SearchComponent {
     this.suggestedCities = CITIES.filter((city) =>
       city.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    if (this.searchTerm) {
+      this.isInputFocused = true;
+    } else {
+      this.isInputFocused = false;
+    }
   }
 
   hideSuggestions() {

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   selectedCity: string = '';
   selectedFoodTypes: string[] = [];
   placesList: Place[] = [];
-  popularCities: City[] = POPULAR_CITIES.slice(0, 7);
+  popularCities: City[] = POPULAR_CITIES.slice(0, 9);
   searchTerm: string = '';
 
   //sorting

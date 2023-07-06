@@ -59,6 +59,16 @@ export const POPULAR_CITIES = [
     imageUrl: '../../../../assets/szczecin.jpg',
     desc: 'Panorama Szczecina',
   },
+  {
+    name: 'Lublin',
+    imageUrl: '../../../../assets/lublin.jpg',
+    desc: 'Panorama Lublina',
+  },
+  {
+    name: 'Rzeszów',
+    imageUrl: '../../../../assets/rzeszow.jpg',
+    desc: 'Zamek Lubomirskich',
+  },
 ];
 
 export const TAGS: Tag[] = [

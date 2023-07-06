@@ -1,6 +1,8 @@
 footer {
   width: 100%;
   background-color: var(--neutral);
+  position: absolute;
+  bottom: 0;
 }
 footer a {
   text-decoration: none;

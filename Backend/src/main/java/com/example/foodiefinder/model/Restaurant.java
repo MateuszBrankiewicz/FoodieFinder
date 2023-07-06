@@ -18,7 +18,7 @@ public class Restaurant {
     @Column(name = "imgUrl")
     private String imgUrl;
     @Column(name = "typeOfFood")
-    private String typeOfFood;
+    private String foodType;
     private String city;
     protected Restaurant(){}
     public Restaurant(String name,String rate,String amountRate,String addres,String imgUrl,String typeOfFood,String city){
@@ -27,7 +27,7 @@ public class Restaurant {
         this.amountRate = amountRate;
         this.addres= addres;
         this.imgUrl = imgUrl;
-        this.typeOfFood = typeOfFood;
+        this.foodType = typeOfFood;
         this.city=city;
     }
 
@@ -47,7 +47,7 @@ public class Restaurant {
         return imgUrl;
     }
     public String getTypeOfFood(){
-        return typeOfFood;
+        return foodType;
     }
     public String getCity(){
         return city;

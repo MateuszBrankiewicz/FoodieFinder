@@ -9,10 +9,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 .tags-container .tag button {
   border-radius: 50%;
-  width: 14vw;
+  width: 5rem;
   max-width: 8rem;
   aspect-ratio: 1/1;
   cursor: pointer;
@@ -23,7 +24,8 @@
 }
 .tags-container .tag button img {
   max-width: 100%;
-  padding: 1rem;
+  /* 1rem */
+  padding: 0.5rem;
   filter: brightness(0) saturate(100%) invert(16%) sepia(88%) saturate(0%)
     hue-rotate(220deg) brightness(91%) contrast(81%);
   opacity: 0.6;
@@ -62,4 +64,14 @@
 .tags-container .tag:hover button.selected {
   background-color: #7fa09e;
   border-color: #7fa09e;
+}
+
+@media screen and (min-width: 375px) {
+  .tags-container .tag button {
+    width: 14vw;
+  }
+
+  .tags-container .tag p {
+    font-size: 1.5rem;
+  }
 }

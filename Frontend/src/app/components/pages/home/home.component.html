@@ -6,32 +6,72 @@
 <app-tags (foodTypesSelected)="onFoodTypesSelected($event)"></app-tags>
 
 <!-- Places list -->
-<ul class="places-list" *ngIf="selectedCity || selectedFoodTypes.length > 0">
-  <div>
-    <label for="sortingOptions">Sort by:</label>
-    <select
-      id="sortingOptions"
-      [(ngModel)]="sortingOption"
-      (ngModelChange)="onSortingOptionChange()"
-    >
-      <option value="bestRating">Best Rating</option>
-      <option value="worstRating">Worst Rating</option>
-    </select>
+<div class="places-list" *ngIf="selectedCity || selectedFoodTypes.length > 0">
+  <h2>Znalezione propozycje</h2>
+
+  <!-- Sorting -->
+  <div
+    *ngIf="selectedCity || selectedFoodTypes.length > 0"
+    class="sorting-container"
+  >
+    <img src="../../../../assets/icons/sort.png" alt="sort-icon" />
+
+    <label class="custom-radio">
+      Najwyższa ocena
+      <input
+        type="radio"
+        id="bestRating"
+        name="sortingOption"
+        value="bestRating"
+        [(ngModel)]="sortingOption"
+        (ngModelChange)="onSortingOptionChange()"
+      />
+      <div class="radio_indicator"></div>
+    </label>
+    <label class="custom-radio">
+      Najniższa ocena
+      <input
+        type="radio"
+        id="worstRating"
+        name="sortingOption"
+        value="worstRating"
+        [(ngModel)]="sortingOption"
+        (ngModelChange)="onSortingOptionChange()"
+      />
+      <div class="radio_indicator"></div>
+    </label>
   </div>
 
-  <li *ngFor="let place of placesList">
-    <img [src]="place.imageUrl" [alt]="place.name" />
-    <div class="content">
-      <h2>{{ place.name }}</h2>
-      <div class="rating">
-        <p>{{ place.reviews }}⭐ na {{ place.review_num }} opinii.</p>
-      </div>
-      <div class="address">
-        <p>📌 {{ place.city }}, {{ place.address }}</p>
-      </div>
-    </div>
-  </li>
-</ul>
+  <!-- List -->
+
+  <ul>
+    <li *ngFor="let place of placesList">
+      <a
+        [href]="
+          'https://www.google.com/search?q=' + place.city + ' ' + place.name
+        "
+        target="_blank"
+      >
+        <div class="place-image">
+          <img [src]="place.imageUrl" />
+        </div>
+        <div class="content">
+          <h3>{{ place.name }}</h3>
+          <div class="rating">
+            <img src="../../../../assets/icons/star.png" alt="star-icon" />
+            <p>{{ place.reviews }}/5 ({{ place.review_num }})</p>
+          </div>
+          <div class="address">
+            <img src="../../../../assets/icons/pin.png" alt="pin-icon" />
+            <p>{{ place.city }}, {{ place.address }}</p>
+          </div>
+          <span class="tag">{{ place.food_type }}</span>
+        </div>
+        <button>Zobacz w Google</button>
+      </a>
+    </li>
+  </ul>
+</div>
 
 <!-- Default home view -->
 

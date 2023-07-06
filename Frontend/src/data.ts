@@ -19,7 +19,7 @@ export const sample_places: Place[] = [
     review_num: '(1,5 tys.)',
     address: 'plac Europejski 2',
     imageUrl:
-      'https://lh5.googleusercontent.com/p/AF1QipOcaCWPJvVaAQrKchGLftZwFlgps5hY_L51TNVb=w200-h175-n-k-no',
+      'https://lh5.googleusercontent.com/p/AF1QipOcaCWPJvVaAQrKchGLftZwFlgps5hY_L51TNVb=w200-h250-n-k-no',
     city: 'Warszawa',
     food_type: 'Sushi',
   },
@@ -30,7 +30,7 @@ export const sample_places: Place[] = [
     review_num: '710',
     address: 'Krakowskie Przedmiescie 68',
     imageUrl:
-      'https://lh5.googleusercontent.com/p/AF1QipPk6gPUN64hAXdId8E7CL0a4kd_g_cmpyViUk01=w200-h175-n-k-no',
+      'https://lh5.googleusercontent.com/p/AF1QipPk6gPUN64hAXdId8E7CL0a4kd_g_cmpyViUk01=w200-h250-n-k-no',
     city: 'Lublin',
     food_type: 'Kebab',
   },
@@ -52,7 +52,7 @@ export const sample_places: Place[] = [
     review_num: '142',
     address: 'Cypriana Godebskiego 10',
     imageUrl:
-      'https://lh5.googleusercontent.com/p/AF1QipOc0U5OkrO5osAyaNK7AccCAbKo55GNLLnDX05t=w200-h200-n-k-no',
+      'https://lh5.googleusercontent.com/p/AF1QipOc0U5OkrO5osAyaNK7AccCAbKo55GNLLnDX05t=w200-h250-n-k-no',
     city: 'Lublin',
     food_type: 'Bar mleczny',
   },
@@ -74,7 +74,7 @@ export const sample_places: Place[] = [
     review_num: '(1,7 tys.)',
     address: 'Warszawa',
     imageUrl:
-      'https://lh5.googleusercontent.com/p/AF1QipM1JD-Xh9C0lKjus50IMLMHJSltoANM--xvNsRy=k-no-n-w90-h128',
+      'https://lh5.googleusercontent.com/p/AF1QipM1JD-Xh9C0lKjus50IMLMHJSltoANM--xvNsRy=k-no-n-w200-h250',
     city: 'Warszawa',
     food_type: 'Pizza',
   },

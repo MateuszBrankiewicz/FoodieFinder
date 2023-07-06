@@ -9,10 +9,10 @@ import { NavbarComponent } from './components/partials/navbar/navbar.component';
 import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
-
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavbarComponent, SearchComponent, TagsComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

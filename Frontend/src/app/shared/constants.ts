@@ -65,6 +65,6 @@ export const TAGS: Tag[] = [
   { title: 'Burger', imageUrl: '../../../../assets/icons/burger.png' },
   { title: 'Pizza', imageUrl: '../../../../assets/icons/pizza-slice.png' },
   { title: 'Kebab', imageUrl: '../../../../assets/icons/burrito.png' },
-  { title: 'Bar mleczny', imageUrl: '../../../../assets/icons/restaurant.png' },
+  { title: 'Bar Mleczny', imageUrl: '../../../../assets/icons/restaurant.png' },
   { title: 'Sushi', imageUrl: '../../../../assets/icons/sushi.png' },
 ];

@@ -53,19 +53,19 @@
         target="_blank"
       >
         <div class="place-image">
-          <img [src]="place.imageUrl" />
+          <img [src]="place.imgUrl" />
         </div>
         <div class="content">
           <h3>{{ place.name }}</h3>
           <div class="rating">
             <img src="../../../../assets/icons/star.png" alt="star-icon" />
-            <p>{{ place.reviews }}/5 ({{ place.review_num }})</p>
+            <p>{{ place.rate }}/5 ({{ place.amountRate }})</p>
           </div>
           <div class="address">
             <img src="../../../../assets/icons/pin.png" alt="pin-icon" />
-            <p>{{ place.city }}, {{ place.address }}</p>
+            <p>{{ place.city }}, {{ place.addres }}</p>
           </div>
-          <span class="tag">{{ place.food_type }}</span>
+          <span class="tag">{{ place.typeOfFood }}</span>
         </div>
         <button>Zobacz w Google</button>
       </a>

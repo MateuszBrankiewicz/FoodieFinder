@@ -63,7 +63,11 @@ export class HomeComponent implements OnInit {
     }
     if (this.selectedFoodTypes.length > 0) {
       queryParams['foodTypes'] = this.selectedFoodTypes.join(',');
-      url += `&foodTypes=${encodeURIComponent(queryParams['foodTypes'])}`;
+      if (url!= ""){
+      url += `&foodTypes=${encodeURIComponent(queryParams['foodTypes'])}`}
+      else{
+          url = `http://localhost:8080/restaurants?foodTypes=${encodeURIComponent(queryParams['foodTypes'])}`;
+      }
     }
     this.router.navigate([], { queryParams: queryParams }).then(() => {
      

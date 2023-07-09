@@ -2,25 +2,32 @@ import { Tag } from './models/Tag';
 
 export const CITIES = [
   'Warszawa',
+  'Krakow',
+  'lodz',
+  'Wroclaw',
+  'Poznan',
+  'Gdansk',
+  'Szczecin',
+  'Lublin',
+  'Rzeszow',
+  'Krasnik',
+  'lukow',
+  'Siedlce',
+];
+
+export const CITIES_PL = [
+  'Warszawa',
   'Kraków',
   'Łódź',
   'Wrocław',
   'Poznań',
   'Gdańsk',
   'Szczecin',
-  'Bydgoszcz',
   'Lublin',
-  'Katowice',
-  'Białystok',
-  'Gdynia',
-  'Częstochowa',
-  'Radom',
-  'Sosnowiec',
-  'Toruń',
-  'Kielce',
   'Rzeszów',
-  'Gliwice',
-  'Zabrze',
+  'Kraśnik',
+  'Łuków',
+  'Siedlce',
 ];
 
 export const POPULAR_CITIES = [

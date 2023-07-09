@@ -23,7 +23,7 @@ export class SearchComponent {
   }
 
   showMore() {
-    this.suggestedCities = CITIES.filter((city) =>
+    this.suggestedCities = this.cities.filter((city) =>
       city.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     if (this.searchTerm) {

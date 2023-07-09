@@ -6,13 +6,15 @@
   top: 0;
   left: 0;
   width: 100%;
+  max-height: 130vh;
   height: 100%;
   z-index: -1;
   opacity: 0.4;
   overflow: hidden;
   display: none;
 }
-.places-list {
+.places-list,
+.not-found {
   min-height: 68vh;
 }
 .places-list li {
@@ -37,45 +39,49 @@
   left: 1.5rem;
   background: radial-gradient(
     60% 80% at 50% 50%,
-    rgba(0, 0, 0, 0.25) 0%,
-    #2f3636 100%
+    rgba(30, 30, 30, 0.4) 0%,
+    var(--black) 120%
   );
 }
 
 .places-list li:hover::after {
   opacity: 0.8;
 }
+.places-list li:hover .place-image img,
+.places-list li:hover .content h3,
+.places-list li:hover .content .tag,
+.places-list li:hover .content .address,
+.places-list li:hover .content .rating {
+  filter: blur(0.15rem);
+}
 
 .places-list li a {
   color: inherit;
   text-decoration: none;
-  width: 100%;
   display: contents;
 }
 
-.places-list li button {
+.places-list li .arrow-icon {
+  width: 20%;
+  aspect-ratio: auto;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
-  color: var(--black);
-  background-color: var(--light);
-  font-size: 1.6rem;
-  padding: 1rem 1.5rem;
-  border-radius: 2rem;
+  transform: translate(-50%, -50%);
   z-index: 1;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
   opacity: 0;
   transition-delay: 0.15s;
-  border: none;
   cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(468%)
+    hue-rotate(300deg) brightness(86%) contrast(87%);
 }
-.places-list li button:hover {
-  background-color: var(--darker);
+.places-list li .arrow-icon:hover {
+  rotate: 15deg;
 }
 
-.places-list li:hover button {
+.places-list li:hover .arrow-icon {
   opacity: 1;
 }
 
@@ -92,17 +98,37 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  overflow: hidden;
   border-radius: 2rem 0 0 2rem;
 }
 
+.places-list .showMoreBtn {
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  display: block;
+  color: var(--black);
+  background-color: var(--light);
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.places-list .showMoreBtn:hover {
+  background-color: var(--darker);
+  scale: 1.1;
+}
 .places-list li .content {
   background-color: var(--white);
   border-radius: 0 2rem 2rem 0;
   box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.25);
-  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  flex: 1;
 }
 
 .places-list .content h3 {
@@ -243,7 +269,8 @@ label input:checked ~ .radio_indicator::after {
 
 /* Default home view */
 .popular-cities,
-.places-list {
+.places-list,
+.not-found {
   margin-top: 2rem;
   background-color: var(--lightNeutral);
   border-radius: 6rem 6rem 0 0;
@@ -259,6 +286,17 @@ label input:checked ~ .radio_indicator::after {
   font-size: 2.3rem;
   text-align: center;
   padding: 2rem;
+}
+.not-found h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.not-found p {
+  margin: 0 auto;
+  font-size: 1.8rem;
+  text-align: center;
 }
 .popular-cities ul,
 .places-list ul {
@@ -305,6 +343,7 @@ label input:checked ~ .radio_indicator::after {
 .popular-cities li .content {
   border-radius: 2rem;
   width: 100%;
+  background-color: var(--black);
 }
 .popular-cities li .background-image {
   aspect-ratio: 16/9;
@@ -359,6 +398,10 @@ label input:checked ~ .radio_indicator::after {
 }
 
 @media screen and (min-width: 1024px) {
+  .places-list .showMoreBtn {
+    grid-column: span 2;
+    font-size: 1.8rem;
+  }
   .decal {
     display: block;
   }
@@ -368,7 +411,8 @@ label input:checked ~ .radio_indicator::after {
     height: 2rem;
   }
   .places-list,
-  .popular-cities {
+  .popular-cities,
+  .not-found {
     max-width: 100rem;
     padding: 0 3rem;
   }
@@ -409,12 +453,16 @@ label input:checked ~ .radio_indicator::after {
 }
 
 @media screen and (min-width: 1280px) {
+  .places-list .showMoreBtn {
+    grid-column: span 3;
+  }
   .sorting-container {
     justify-content: flex-start;
     margin-left: 3rem;
   }
   .popular-cities,
-  .places-list {
+  .places-list,
+  .not-found {
     max-width: 1440px;
     padding: 0 3rem;
   }

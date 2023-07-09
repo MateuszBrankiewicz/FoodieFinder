@@ -6,16 +6,61 @@
 ></app-search>
 <app-tags (foodTypesSelected)="onFoodTypesSelected($event)"></app-tags>
 
+<div *ngIf="response.length <= 0 && !loading" class="not-found">
+  <h2>Niestety niczego nie znaleźliśmy ;(</h2>
+  <p>Spróbuj innych opcji wyszukiwania</p>
+</div>
+
+<!-- Loading -->
+<div
+  *ngIf="loading && (selectedCity || selectedFoodTypes.length > 0)"
+  class="loading-circle"
+>
+  <svg
+    version="1.1"
+    id="loader-1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    width="40px"
+    height="40px"
+    viewBox="0 0 40 40"
+    enable-background="new 0 0 40 40"
+    xml:space="preserve"
+  >
+    <path
+      opacity="0.2"
+      fill="#000"
+      d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+    />
+    <path
+      fill="#000"
+      d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+    C22.32,8.481,24.301,9.057,26.013,10.047z"
+    ></path>
+  </svg>
+</div>
+
 <!-- Places list -->
-<div class="places-list" *ngIf="selectedCity || selectedFoodTypes.length > 0">
+<div
+  class="places-list"
+  *ngIf="(selectedCity || selectedFoodTypes.length > 0) && !loading"
+>
   <h2>Znalezione propozycje</h2>
 
   <!-- Sorting -->
   <div
-    *ngIf="selectedCity || selectedFoodTypes.length > 0"
+    *ngIf="(selectedCity || selectedFoodTypes.length > 0) && !loading"
     class="sorting-container"
   >
-    <img src="../../../../assets/icons/sort.png" alt="sort-icon" />
+    <img
+      src="../../../../assets/icons/sort.png"
+      alt="sort-icon"
+      loading="lazy"
+    />
 
     <label class="custom-radio">
       Najwyższa ocena
@@ -54,23 +99,47 @@
         target="_blank"
       >
         <div class="place-image">
-          <img [src]="place.imgUrl" />
+          <img
+            [src]="place.imgUrl"
+            (error)="handleImageError(place)"
+            loading="lazy"
+          />
         </div>
         <div class="content">
           <h3>{{ place.name }}</h3>
           <div class="rating">
-            <img src="../../../../assets/icons/star.png" alt="star-icon" />
+            <img
+              src="../../../../assets/icons/star.png"
+              alt="star-icon"
+              loading="lazy"
+            />
             <p>{{ place.rate }}/5 ({{ place.amountRate }})</p>
           </div>
           <div class="address">
-            <img src="../../../../assets/icons/pin.png" alt="pin-icon" />
+            <img
+              src="../../../../assets/icons/pin.png"
+              alt="pin-icon"
+              loading="lazy"
+            />
             <p>{{ place.city }}, {{ place.addres }}</p>
           </div>
           <span class="tag">{{ place.typeOfFood }}</span>
         </div>
-        <button>Zobacz w Google</button>
+        <img
+          src="../../../../assets/icons/right-arrow.png"
+          alt="arrow-icon"
+          class="arrow-icon"
+          loading="lazy"
+        />
       </a>
     </li>
+    <button
+      (click)="showMorePlaces()"
+      *ngIf="response.length < numberOfPlaces"
+      class="showMoreBtn"
+    >
+      Pokaż więcej
+    </button>
   </ul>
 </div>
 

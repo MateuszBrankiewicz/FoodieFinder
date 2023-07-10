@@ -135,7 +135,7 @@
     </li>
     <button
       (click)="showMorePlaces()"
-      *ngIf="response.length < numberOfPlaces"
+      *ngIf="numberOfPlaces <= response.length"
       class="showMoreBtn"
     >
       Pokaż więcej
@@ -151,10 +151,7 @@
 >
   <h2>Najpopularniejsze miasta w Polsce</h2>
   <ul>
-    <li
-      *ngFor="let city of popularCities"
-      (click)="onSelectPopularCity(city.name)"
-    >
+    <li *ngFor="let city of popularCities" (click)="onSelectPopularCity(city)">
       <div
         class="content background-image"
         [style.background-image]="'url(' + city.imageUrl + ')'"

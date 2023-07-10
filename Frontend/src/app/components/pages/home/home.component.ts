@@ -135,9 +135,9 @@ export class HomeComponent implements OnInit {
     this.checkMorePlaces();
   }
 
-  onSelectPopularCity(city: string) {
-    this.selectedCity = city;
-    this.searchTerm = city;
+  onSelectPopularCity(city: City) {
+    this.selectedCity = city.paramName;
+    this.searchTerm = city.name;
     this.updateRestaurantList();
   }
 

@@ -27,7 +27,7 @@
       (click)="onSelectCity(suggestion)"
     >
       <img src="../../../../assets/icons/pin.png" alt="pin" draggable="false" />
-      {{ suggestion }}
+      {{ suggestion[0].toUpperCase() + suggestion.slice(1) }}
     </li>
   </ul>
 </div>
